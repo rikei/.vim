@@ -35,21 +35,17 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
 
     Plugin 'scrooloose/syntastic'
     Plugin 'SingleCompile'
-    Plugin 'DoxygenToolkit.vim'
+    "Plugin 'DoxygenToolkit.vim'
     Plugin 'taglist.vim'
-    "Plugin 'Shougo/neocomplete.vim'
     Plugin 'ervandew/supertab'
 
-    " c
     Plugin 'omnicppcomplete'
     Plugin 'echofunc.vim'
 
-    " python
-    "Plugin 'pythoncomplete'
+    Plugin 'pythoncomplete'
     "Plugin 'pydiction'
-    Plugin 'davidhalter/jedi-vim'
+    "Plugin 'davidhalter/jedi-vim'
 
-    " markdown
     "Plugin 'plasticboy/vim-markdown'
 
     call vundle#end()
@@ -335,7 +331,7 @@ au GUIEnter * simalt ~x
 map q: :q
 
 " make tags for current directory
-map <F3> <ESC>:!ctags --fields=+iafksS --extra=+qf -R *<cr>
+map <f3> <esc>:!ctags --langmap=c:+.h --languages=c,c++ --c-kinds=+px --c++-kinds=+px --fields=+iafksS --extra=+qf *.[ch]<cr>
 "}}}
 
 " => Environment setting{{{
@@ -393,7 +389,8 @@ augroup ft_python
                 \ setlocal ai |
                 \ setlocal ff=unix |
                 \ inoremap # X#|
-                \ match Error /\s\+$/
+                \ match Error /\s\+$/ |
+                \ call SetPyEnv()
     au BufNewFile *.py
                 \ call SetTitle()
 augroup END
@@ -409,6 +406,7 @@ augroup END
 
 " => Custom-defined function and commands{{{
 " comment leader
+let b:comment_leader = ''
 au FileType haskell,vhdl,ada,sql
             \ let b:comment_leader = '-- '
 au FileType vim
@@ -422,6 +420,10 @@ au FileType tex
 
 " set titile
 func! SetTitle ()
+    if b:comment_leader == ''
+        echomsg "unknown filetype"
+        return
+    endif
     let s:title=""
 
     " shabang
@@ -507,30 +509,6 @@ func! SetPyEnv()
     endif
 endfunc
 
-com! -range -nargs=0 Comment call Comment(<line1>, <line2>)
-com! -range -nargs=0 Uncomment call Uncomment(<line1>, <line2>)
-
-"Function for commenting a block of Visually selected text
-func! Comment(start, end)
-  let i=a:start
-  while i<=a:end
-    let cl=getline(i)
-    let cl2=b:comment_leader.cl
-    call setline(i, cl2)
-    let i=i+1
-  endwhile
-endfunction
-
-"Function for Un-Commenting a block of Visually selected text
-func! Uncomment(start, end)
-  let i=a:start
-  while i<=a:end
-    let cl=getline(i)
-    let cl2=substitute(cl, b:comment_leader, "", "")
-    call setline(i, cl2)
-    let i=i+1
-  endwhile
-endfunction
 "}}}
 
 " => plugin setting{{{
@@ -599,14 +577,6 @@ map <leader>df :Dox<CR>
 map <leader>db :DoxBlock<CR>
 "}}}
 
-"plugin - snipMate{{{
-let g:snips_author = 'lipan'
-"}}}
-
-"plugin - vim_markdown{{{
-let g:vim_markdown_folding_disabled = 1
-"}}}
-
 "plugin - syntastic{{{
 let g:syntastic_error_symbol='>>'
 let g:syntastic_warning_symbol='>'
@@ -640,12 +610,7 @@ if "" != $VIM_PATH_C
 endif
 "}}}
 
-"plugin - pydiction{{{
-let g:pydiction_location = $HOME.'/.vim/bundle/pydiction/complete-dict'
-"}}}
-
 "plugin - SingleCompile{{{
-map <silent> <leader>r <ESC>:SCCompileRun<CR>
 map <silent> <F5> <ESC>:SCCompileRun<CR>
 "}}}
 
