@@ -28,8 +28,6 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
     call vundle#begin()
 
     "general
-    Plugin 'scrooloose/nerdtree'
-
     Plugin 'flazz/vim-colorschemes'
     Plugin 'jdevera/vim-cs-explorer'
 
