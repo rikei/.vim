@@ -27,8 +27,6 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
     set rtp+=$HOME/.vim/bundle/Vundle.vim/
     call vundle#begin()
 
-    Plugin 'VundleVim/Vundle.vim'
-
     "general
     Plugin 'scrooloose/nerdtree'
 
