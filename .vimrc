@@ -27,7 +27,7 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
     set rtp+=$HOME/.vim/bundle/Vundle.vim/
     call vundle#begin()
 
-    Plugin 'VundleVim/Vundle.vim'
+    "Plugin 'VundleVim/Vundle.vim'
 
     "general
     Plugin 'flazz/vim-colorschemes'
@@ -37,17 +37,20 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
     Plugin 'SingleCompile'
     Plugin 'DoxygenToolkit.vim'
     Plugin 'taglist.vim'
+    "Plugin 'Shougo/neocomplete.vim'
+    Plugin 'ervandew/supertab'
 
     " c
     Plugin 'omnicppcomplete'
     Plugin 'echofunc.vim'
 
     " python
-    Plugin 'pythoncomplete'
-    Plugin 'pydiction'
+    "Plugin 'pythoncomplete'
+    "Plugin 'pydiction'
+    Plugin 'davidhalter/jedi-vim'
 
     " markdown
-    Plugin 'plasticboy/vim-markdown'
+    "Plugin 'plasticboy/vim-markdown'
 
     call vundle#end()
     filetype plugin indent on "required
@@ -390,8 +393,7 @@ augroup ft_python
                 \ setlocal ai |
                 \ setlocal ff=unix |
                 \ inoremap # X#|
-                \ match Error /\s\+$/ |
-                \ call SetPyEnv()
+                \ match Error /\s\+$/
     au BufNewFile *.py
                 \ call SetTitle()
 augroup END
@@ -652,6 +654,10 @@ let g:EchoFuncAutoStartBalloonDeclaration=1
 let g:EchoFuncKeyPrev='<c-b>'
 let g:EchoFuncKeyNext='<c-f>'
 let g:EchoFuncLangsUsed = ["c","cpp","python"]  
+"}}}
+
+"plugin - supertab.vim{{{
+let g:SuperTabDefaultCompletionType = "context"
 "}}}
 " vim: set fdm=marker:
 "}}}
