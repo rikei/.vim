@@ -26,11 +26,11 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
     set rtp+=$HOME/.vim/bundle/Vundle.vim/
     call vundle#begin()
 
-    "Plugin 'VundleVim/Vundle.vim'
+    Plugin 'VundleVim/Vundle.vim'
 
     "general
     Plugin 'flazz/vim-colorschemes'
-    "Plugin 'jdevera/vim-cs-explorer'
+    Plugin 'jdevera/vim-cs-explorer'
     "Plugin 'jlanzarotta/bufexplorer'
     "Plugin 'bling/vim-airline'
     "Plugin 'ryanoasis/vim-devicons'
@@ -230,6 +230,7 @@ set nowb
 
 au BufNewFile,BufRead *.pc setfile c
 au BufNewFile,BufRead *.sqc setfile c
+au BufNewFile,BufRead *.CFG setfile sql
 au BufNewFile,BufRead *.jrxml setfile sql
 "}}}
 
