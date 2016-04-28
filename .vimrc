@@ -12,7 +12,6 @@
 "    => Vimgrep searching and cope displaying
 "    => Spell checking
 "    => Misc
-"    => Environment setting
 "    => Persional setting
 "    => Language special
 "    => Custom-defined function and commands
@@ -31,21 +30,24 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
 
     "general
     Plugin 'flazz/vim-colorschemes'
-    Plugin 'jdevera/vim-cs-explorer'
-
+    "Plugin 'jdevera/vim-cs-explorer'
+    "Plugin 'jlanzarotta/bufexplorer'
+    "Plugin 'bling/vim-airline'
+    "Plugin 'ryanoasis/vim-devicons'
+    "Plugin 'ctrlpvim/ctrlp.vim'
+    "Plugin 'mhinz/vim-startify'
+    "Plugin 'AlxHnr/clear_colors'
+    "Plugin 'Yggdroot/indentLine'
     Plugin 'scrooloose/syntastic'
     Plugin 'SingleCompile'
     "Plugin 'DoxygenToolkit.vim'
     Plugin 'taglist.vim'
-    Plugin 'ervandew/supertab'
-
+    "Plugin 'ervandew/supertab'
     Plugin 'omnicppcomplete'
     Plugin 'echofunc.vim'
-
     Plugin 'pythoncomplete'
     "Plugin 'pydiction'
     "Plugin 'davidhalter/jedi-vim'
-
     "Plugin 'plasticboy/vim-markdown'
 
     call vundle#end()
@@ -173,7 +175,7 @@ set showcmd
 "highlight current line
 "au WinLeave * set nocursorline nocursorcolumn
 "au WinEnter * set cursorline cursorcolumn
-"set cursorline cursorcolumn
+set cursorline
 
 "fold setting
 if has("folding")
@@ -332,10 +334,6 @@ map q: :q
 
 " make tags for current directory
 map <f3> <esc>:!ctags --langmap=c:+.h --languages=c,c++ --c-kinds=+px --c++-kinds=+px --fields=+iafksS --extra=+qf *.[ch]<cr>
-"}}}
-
-" => Environment setting{{{
-
 "}}}
 
 " => Persional setting{{{
@@ -508,7 +506,6 @@ func! SetPyEnv()
         set csverb
     endif
 endfunc
-
 "}}}
 
 " => plugin setting{{{
@@ -539,7 +536,7 @@ let Tlist_File_Fold_Auto_Close = 0
 "tagsdo't close the tags that belongs to other files
 let Tlist_Enable_Fold_Column = 0
 "not show fold tree
-nmap <silent><F7> :Tlist<cr>
+"nmap <silent><F7> :Tlist<cr>
 "}}}
 
 " plugin - OmniCppComplete setting{{{
@@ -623,6 +620,24 @@ let g:EchoFuncLangsUsed = ["c","cpp","python"]
 
 "plugin - supertab.vim{{{
 let g:SuperTabDefaultCompletionType = "context"
+"}}}
+
+"plugin - indentLine{{{
+let g:indentLine_enabled = 0
+let g:indentLine_leadingSpaceEnabled = 0
+let g:indentLine_color_term = 239
+let g:indentLine_color_gui = '#665C54'
+let g:indentLine_color_tty_light = 7            "(default: 4)
+let g:indentLine_color_dark = 1                 "(default: 2)
+let g:indentLine_char = '¦'                     "¦┆︙│                                                                                                                                                                                
+let g:indentLine_leadingSpaceChar = '·'         "˽˰··
+let g:indentLine_concealcursor = 'vc'           "(default 'inc')
+let g:indentLine_conceallevel = 2               "(default 2)
+"}}}
+
+"plugin - airline{{{
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 "}}}
 " vim: set fdm=marker:
 "}}}
