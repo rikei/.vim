@@ -1,10 +1,14 @@
-1.ctags and cscope
+
+=> Vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+=> ctags and cscope
 
 ctags -I __THROW,__attribute_pure__,__nonnull,__attribute__ --langmap=c:+.h --languages=c,c++ --c-kinds=+px --c++-kinds=+px --fields=+iafksS --extra=+qf -f ~/tags_sys -R  /usr/include
 
 find /usr/include -name "*.h" > ~/cscope_sys.files && cscope -b -i  ~/cscope_sys.files -f ~/cscope_sys.out
 
-2.environment setting, for example:
+=> environment setting, for example:
 
 export VIM_TAGS_C=~/tags_sys
 
@@ -18,7 +22,7 @@ export VIM_TAGS_PY=~/tags_py
 
 export VIM_CSCOPE_PY=~/cscope_py.out
 
-3..vimrc setting
+=> .vimrc setting
 
 ln -s ~/.vim/.vimrc ~/.vimrc
 
