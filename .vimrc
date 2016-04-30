@@ -40,7 +40,7 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
     "Plugin 'Yggdroot/indentLine'
     Plugin 'scrooloose/syntastic'
     Plugin 'SingleCompile'
-    "Plugin 'DoxygenToolkit.vim'
+    Plugin 'DoxygenToolkit.vim'
     Plugin 'taglist.vim'
     "Plugin 'ervandew/supertab'
     Plugin 'omnicppcomplete'
