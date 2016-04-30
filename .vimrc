@@ -46,7 +46,7 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
     Plugin 'omnicppcomplete'
     Plugin 'echofunc.vim'
     Plugin 'pythoncomplete'
-    "Plugin 'pydiction'
+    Plugin 'pydiction'
     "Plugin 'davidhalter/jedi-vim'
     "Plugin 'plasticboy/vim-markdown'
 
@@ -634,6 +634,10 @@ let g:indentLine_char = '¦'                     "¦┆︙│
 let g:indentLine_leadingSpaceChar = '·'         "˽˰··
 let g:indentLine_concealcursor = 'vc'           "(default 'inc')
 let g:indentLine_conceallevel = 2               "(default 2)
+"}}}
+
+"plugin - pydiction{{{
+let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 "}}}
 
 "plugin - airline{{{
