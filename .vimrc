@@ -644,5 +644,9 @@ let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 "}}}
+
+" plugin - dummy{{{
+cd  ~/
+"}}}
 " vim: set fdm=marker:
 "}}}
