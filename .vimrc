@@ -29,7 +29,7 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
     Plugin 'VundleVim/Vundle.vim'
 
     "general
-    Plugin 'flazz/vim-colorschemes'
+    Plugin 'rikei/vim-colorschemes'
     Plugin 'jdevera/vim-cs-explorer'
     "Plugin 'jlanzarotta/bufexplorer'
     "Plugin 'bling/vim-airline'
@@ -38,7 +38,7 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
     "Plugin 'mhinz/vim-startify'
     "Plugin 'AlxHnr/clear_colors'
     "Plugin 'Yggdroot/indentLine'
-    Plugin 'scrooloose/syntastic'
+    Plugin 'rikei/syntastic'
     Plugin 'SingleCompile'
     Plugin 'DoxygenToolkit.vim'
     Plugin 'taglist.vim'
