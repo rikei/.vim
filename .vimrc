@@ -546,8 +546,8 @@ let OmniCpp_GlobalScopeSearch = 1
 let OmniCpp_ShowAccess = 1
 let OmniCpp_ShowPrototypeInAbbr = 1 "show function prototype
 let OmniCpp_MayCompleteDot = 1   "input ., auto complete
-let OmniCpp_MayCompleteArrow = 1 "input ->, auto complete
-let OmniCpp_MayCompleteScope = 1 "input :: auto complete
+let OmniCpp_MayCompleteArrow = 0 "input ->, auto complete
+let OmniCpp_MayCompleteScope = 0 "input :: auto complete
 let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 
 "auto close complete window
