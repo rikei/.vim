@@ -100,6 +100,8 @@ se fencs=ucs-bom,cp936,utf-8,cp932,latin1
 set ffs=unix,dos,mac
 
 set nostartofline
+
+set ve=block
 "}}}
 
 " => VIM user interface{{{
