@@ -40,11 +40,11 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
     "Plugin 'Yggdroot/indentLine'
     Plugin 'rikei/syntastic'
     Plugin 'SingleCompile'
-    Plugin 'DoxygenToolkit.vim'
+    "Plugin 'DoxygenToolkit.vim'
     Plugin 'taglist.vim'
     "Plugin 'ervandew/supertab'
     Plugin 'omnicppcomplete'
-    Plugin 'echofunc.vim'
+    "Plugin 'echofunc.vim'
     Plugin 'pythoncomplete'
     Plugin 'pydiction'
     "Plugin 'davidhalter/jedi-vim'
@@ -266,6 +266,8 @@ vmap <C-c> "+y
 
 vnoremap < <gv
 vnoremap > >gv
+
+nnoremap ,/ :s;/;\\/;g<cr>
 "}}}
 
 " => Moving around, tabs, windows and buffers{{{
@@ -326,14 +328,14 @@ map <leader>pp :setlocal paste!<cr>
 nnoremap <leader>W :%s/\s\+$//e<cr>:let @/=''<cr>
 
 " replace tab with space
-nnoremap <leader>T :%s/\t/    /ge<cr>:let @/=''<cr>
+"nnoremap <leader>T :%s/\t/    /ge<cr>:let @/=''<cr>
 
 "auto full screen
 au GUIEnter * simalt ~x
 
 "au VimResized * exe "normal! \<c-w>="
 
-map q: :q
+"map q: :q
 
 " make tags for current directory
 map <f3> <esc>:!ctags --langmap=c:+.h --languages=c,c++ --c-kinds=+px --c++-kinds=+px --fields=+iafksS --extra=+qf *.[ch]<cr>
@@ -623,19 +625,6 @@ let g:EchoFuncLangsUsed = ["c","cpp","python"]
 
 "plugin - supertab.vim{{{
 let g:SuperTabDefaultCompletionType = "context"
-"}}}
-
-"plugin - indentLine{{{
-let g:indentLine_enabled = 0
-let g:indentLine_leadingSpaceEnabled = 0
-let g:indentLine_color_term = 239
-let g:indentLine_color_gui = '#665C54'
-let g:indentLine_color_tty_light = 7            "(default: 4)
-let g:indentLine_color_dark = 1                 "(default: 2)
-let g:indentLine_char = '¦'                     "¦┆︙│                                                                                                                                                                                
-let g:indentLine_leadingSpaceChar = '·'         "˽˰··
-let g:indentLine_concealcursor = 'vc'           "(default 'inc')
-let g:indentLine_conceallevel = 2               "(default 2)
 "}}}
 
 "plugin - pydiction{{{
