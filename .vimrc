@@ -186,7 +186,7 @@ if has("folding")
     set foldcolumn=3
     set foldlevel=0
     "set foldclose=all
-    nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+    nnoremap <silent> <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 endif
 
 "enable mouse
@@ -267,7 +267,7 @@ vmap <C-c> "+y
 vnoremap < <gv
 vnoremap > >gv
 
-nnoremap ,/ :s;/;\\/;g<cr>
+nnoremap <silent> ,/ :s;/;\\/;g<cr>
 "}}}
 
 " => Moving around, tabs, windows and buffers{{{
@@ -289,7 +289,7 @@ nnoremap ,/ :s;/;\\/;g<cr>
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " fullpath
-map <leader>f :echo expand("%:p")<cr>
+"map <leader>f :echo expand("%:p")<cr>
 
 " Specify the behavior when switching between buffers
 try
@@ -304,7 +304,7 @@ autocmd BufReadPost *
      \   exe "normal! g`\"" |
      \ endif
 " Remember info about open buffers on close
-set viminfo^=%
+set viminfo=%10,'20,/20,:20,<50,s100,@100
 
 au! BufWritePost .vimrc source %
 "}}}
@@ -322,10 +322,10 @@ set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:
 "map <leader>q :e ~/buffer<cr>
 
 " Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
+nnoremap <silent> <leader>pp :setlocal paste!<cr>
 
 " remvoe all the trailling whitespaces
-nnoremap <leader>W :%s/\s\+$//e<cr>:let @/=''<cr>
+nnoremap <silent> <leader>W :%s/\s\+$//e<cr>:let @/=''<cr>
 
 " replace tab with space
 "nnoremap <leader>T :%s/\t/    /ge<cr>:let @/=''<cr>
@@ -620,7 +620,7 @@ map <silent> <F5> <ESC>:SCCompileRun<CR>
 let g:EchoFuncAutoStartBalloonDeclaration=1
 let g:EchoFuncKeyPrev='<c-b>'
 let g:EchoFuncKeyNext='<c-f>'
-let g:EchoFuncLangsUsed = ["c","cpp","python"]  
+let g:EchoFuncLangsUsed = ["c","cpp","python"]
 "}}}
 
 "plugin - supertab.vim{{{
