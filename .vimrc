@@ -30,7 +30,7 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
 
     "general
     Plugin 'rikei/vim-colorschemes'
-    Plugin 'jdevera/vim-cs-explorer'
+    "Plugin 'jdevera/vim-cs-explorer'
     "Plugin 'jlanzarotta/bufexplorer'
     "Plugin 'bling/vim-airline'
     "Plugin 'ryanoasis/vim-devicons'
@@ -49,6 +49,7 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
     Plugin 'pydiction'
     "Plugin 'davidhalter/jedi-vim'
     "Plugin 'plasticboy/vim-markdown'
+    "Plugin 'KabbAmine/zeavim.vim'
 
     call vundle#end()
     filetype plugin indent on "required
