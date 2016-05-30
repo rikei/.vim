@@ -268,7 +268,6 @@ vmap <C-c> "+y
 vnoremap < <gv
 vnoremap > >gv
 
-nnoremap <silent> ,/ :s;/;\\/;g<cr>
 "}}}
 
 " => Moving around, tabs, windows and buffers{{{
@@ -304,6 +303,7 @@ autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
+
 " Remember info about open buffers on close
 set viminfo=%10,'20,/20,:20,<50,s100,@100
 
