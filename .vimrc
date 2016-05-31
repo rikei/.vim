@@ -315,7 +315,7 @@ au! BufWritePost .vimrc source %
 set laststatus=2
 
 " Format the status line
-set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\
+set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\ |
 "}}}
 
 " => Misc{{{
