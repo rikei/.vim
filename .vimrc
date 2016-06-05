@@ -39,6 +39,7 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
     "Plugin 'AlxHnr/clear_colors'
     "Plugin 'Yggdroot/indentLine'
     Plugin 'rikei/syntastic'
+    Plugin 'rikei/misc.vim'
     Plugin 'SingleCompile'
     "Plugin 'DoxygenToolkit.vim'
     Plugin 'taglist.vim'
@@ -206,6 +207,7 @@ if has("gui_running")
     set guioptions-=T
     set guioptions-=m
     set guioptions+=e
+    set guioptions+=c
     set guitablabel=%M\ %t
     set guifont=Consolas:h12:cANSI
 
