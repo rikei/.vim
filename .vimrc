@@ -104,6 +104,8 @@ set ffs=unix,dos,mac
 set nostartofline
 
 set ve=block
+
+set clipboard=unnamed
 "}}}
 
 " => VIM user interface{{{
