@@ -208,7 +208,8 @@ set background=dark
 if has("gui_running")
     set guioptions-=T
     set guioptions-=m
-    set guioptions+=e
+    set guioptions-=r
+    set guioptions-=e
     set guioptions+=c
     set guitablabel=%M\ %t
     set guifont=Consolas:h12:cANSI
@@ -230,10 +231,27 @@ endif
 "}}}
 
 " => Files, backups and undo{{{
-" Turn backup off, since most stuff is in SVN, git et.c anyway...
-set nobackup
-set nowb
-"set noswapfile
+if has("writebackup")
+    set backup
+    set backupdir=$HOME/.vim/.backup
+    if "" == finddir('.backup', $HOME.'/.vim')
+        call mkdir($HOME.'/.vim/.backup','p')
+    endif
+    au BufWritePre * let &bex = '_' . strftime("%Y-%m-%d_%H:%M")
+endif
+
+set dir=$HOME/.vim/.swap
+if "" == finddir('.swap', $HOME.'/.vim')
+    call mkdir($HOME.'/.vim/.swap','p')
+endif
+
+if has('persistent_undo')      "check if your vim version supports it
+    set undofile                 "turn on the feature
+    set undodir=$HOME/.vim/.undo  "directory where the undo files will be stored
+    if "" == finddir('.undo', $HOME.'/.vim')
+        call mkdir($HOME.'/.vim/.undo','p')
+    endif
+endif
 
 au BufNewFile,BufRead *.pc setfile c
 au BufNewFile,BufRead *.sqc setfile c
