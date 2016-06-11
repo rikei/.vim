@@ -237,7 +237,7 @@ if has("writebackup")
     if "" == finddir('.backup', $HOME.'/.vim')
         call mkdir($HOME.'/.vim/.backup','p')
     endif
-    au BufWritePre * let &bex = '_' . strftime("%Y-%m-%d_%H:%M")
+    au BufWritePre * let &bex = '_' . strftime("%Y-%m-%d_%H:%M:%S"). '~'
 endif
 
 set dir=$HOME/.vim/.swap
