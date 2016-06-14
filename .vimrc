@@ -105,7 +105,7 @@ set nostartofline
 
 set ve=block
 
-set clipboard=unnamed
+"set clipboard=unnamed
 "}}}
 
 " => VIM user interface{{{
