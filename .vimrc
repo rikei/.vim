@@ -231,14 +231,14 @@ endif
 "}}}
 
 " => Files, backups and undo{{{
-if has("writebackup")
-    set backup
-    set backupdir=$HOME/.vim/.backup
-    if "" == finddir('.backup', $HOME.'/.vim')
-        call mkdir($HOME.'/.vim/.backup','p')
-    endif
-    au BufWritePre * let &bex = '_' . strftime("%Y-%m-%d_%H:%M:%S"). '~'
-endif
+"if has("writebackup")
+"    set backup
+"    set backupdir=$HOME/.vim/.backup
+"    if "" == finddir('.backup', $HOME.'/.vim')
+"        call mkdir($HOME.'/.vim/.backup','p')
+"    endif
+"    au BufWritePre * let &bex = '_' . strftime("%Y-%m-%d_%H:%M:%S"). '~'
+"endif
 
 set dir=$HOME/.vim/.swap
 if "" == finddir('.swap', $HOME.'/.vim')
