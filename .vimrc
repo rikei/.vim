@@ -233,23 +233,23 @@ endif
 " => Files, backups and undo{{{
 "if has("writebackup")
 "    set backup
-"    set backupdir=$HOME/.vim/.backup
-"    if "" == finddir('.backup', $HOME.'/.vim')
-"        call mkdir($HOME.'/.vim/.backup','p')
+"    set backupdir=$HOME/.vimws/.backup
+"    if "" == finddir('.backup', $HOME.'/.vimws')
+"        call mkdir($HOME.'/.vimws/.backup','p')
 "    endif
 "    au BufWritePre * let &bex = '_' . strftime("%Y-%m-%d_%H:%M:%S"). '~'
 "endif
 
-set dir=$HOME/.vim/.swap
-if "" == finddir('.swap', $HOME.'/.vim')
-    call mkdir($HOME.'/.vim/.swap','p')
+set dir=$HOME/.vimws/.swap
+if "" == finddir('.swap', $HOME.'/.vimws')
+    call mkdir($HOME.'/.vimws/.swap','p')
 endif
 
 if has('persistent_undo')      "check if your vim version supports it
     set undofile                 "turn on the feature
-    set undodir=$HOME/.vim/.undo  "directory where the undo files will be stored
-    if "" == finddir('.undo', $HOME.'/.vim')
-        call mkdir($HOME.'/.vim/.undo','p')
+    set undodir=$HOME/.vimws/.undo  "directory where the undo files will be stored
+    if "" == finddir('.undo', $HOME.'/.vimws')
+        call mkdir($HOME.'/.vimws/.undo','p')
     endif
 endif
 
