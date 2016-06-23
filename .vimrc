@@ -240,6 +240,11 @@ endif
 "    au BufWritePre * let &bex = '_' . strftime("%Y-%m-%d_%H:%M:%S"). '~'
 "endif
 
+if has("mksession")
+    set ssop-=curdir
+    set ssop+=sesdir
+endif
+
 set dir=$HOME/.vimws/.swap
 if "" == finddir('.swap', $HOME.'/.vimws')
     call mkdir($HOME.'/.vimws/.swap','p')
@@ -330,6 +335,10 @@ autocmd BufReadPost *
 set viminfo=%10,'20,/20,:20,<50,s100,@100
 
 au! BufWritePost .vimrc source %
+
+if exists("+autochdir")
+    set autochdir
+endif
 "}}}
 
 " => Status line{{{
@@ -660,7 +669,7 @@ let g:airline#extensions#tabline#enabled = 1
 "}}}
 
 " plugin - dummy{{{
-cd  ~/
+autocmd BufCreate * if "" == expand("%") | cd ~ | endif
 "}}}
 " vim: set fdm=marker:
 "}}}
