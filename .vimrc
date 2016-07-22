@@ -332,7 +332,7 @@ autocmd BufReadPost *
      \ endif
 
 " Remember info about open buffers on close
-set viminfo=%10,'20,/20,:20,<50,s100,@100
+set viminfo=%100,'100,/100,:100,<100,s100,@100
 
 au! BufWritePost .vimrc source %
 
@@ -646,6 +646,7 @@ endif
 
 "plugin - SingleCompile{{{
 map <silent> <F5> <ESC>:SCCompileRun<CR>
+map <silent> <leader>r <ESC>:SCCompileRun<CR>
 "}}}
 
 "plugin - echofunc.vim{{{
