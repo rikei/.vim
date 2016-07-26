@@ -84,8 +84,15 @@ set confirm
 
 "set language as english by force
 set langmenu=none
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
+
+if "" != findfile("delmenu.vim",$VIMRUNTIME)
+    source $VIMRUNTIME/delmenu.vim
+endif
+
+if "" != findfile("menu.vim",$VIMRUNTIME)
+    source $VIMRUNTIME/menu.vim
+endif
+
 language messages en_US.utf-8
 
 "set terminal encoding
