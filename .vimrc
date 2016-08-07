@@ -15,7 +15,7 @@
 "    => Persional setting
 "    => Language special
 "    => Custom-defined function and commands
-"    => plugin setting
+"    => Plugin setting
 "}}}
 
 "=> Vundle setting{{{
@@ -40,14 +40,14 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
     "Plugin 'Yggdroot/indentLine'
     Plugin 'rikei/syntastic'
     Plugin 'rikei/misc.vim'
-    Plugin 'SingleCompile'
+    "Plugin 'SingleCompile'
     "Plugin 'DoxygenToolkit.vim'
     Plugin 'taglist.vim'
     "Plugin 'ervandew/supertab'
     Plugin 'omnicppcomplete'
     "Plugin 'echofunc.vim'
-    Plugin 'pythoncomplete'
-    Plugin 'pydiction'
+    "Plugin 'pythoncomplete'
+    "Plugin 'pydiction'
     "Plugin 'davidhalter/jedi-vim'
     "Plugin 'plasticboy/vim-markdown'
     "Plugin 'KabbAmine/zeavim.vim'
@@ -223,7 +223,8 @@ if has("gui_running")
 
     set t_Co=256
     try
-        colorscheme solarized
+        "colorscheme solarized
+        colorscheme molokai
     catch
         colorscheme desert
     endtry
@@ -552,7 +553,7 @@ func! SetPyEnv()
 endfunc
 "}}}
 
-" => plugin setting{{{
+" => Plugin setting{{{
 "plugin - taglist.vim{{{
 ""view function list, ctags  programme is needed
 "F4 show hidden taglist window
