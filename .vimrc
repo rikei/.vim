@@ -30,27 +30,12 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
 
     "general
     Plugin 'rikei/vim-colorschemes'
-    "Plugin 'jdevera/vim-cs-explorer'
-    "Plugin 'jlanzarotta/bufexplorer'
-    "Plugin 'bling/vim-airline'
-    "Plugin 'ryanoasis/vim-devicons'
-    "Plugin 'ctrlpvim/ctrlp.vim'
-    "Plugin 'mhinz/vim-startify'
-    "Plugin 'AlxHnr/clear_colors'
-    "Plugin 'Yggdroot/indentLine'
-    Plugin 'rikei/syntastic'
+    Plugin 'jdevera/vim-cs-explorer'
     Plugin 'rikei/misc.vim'
-    "Plugin 'SingleCompile'
-    "Plugin 'DoxygenToolkit.vim'
+    Plugin 'rikei/syntastic'
     Plugin 'taglist.vim'
-    "Plugin 'ervandew/supertab'
     Plugin 'omnicppcomplete'
-    "Plugin 'echofunc.vim'
-    "Plugin 'pythoncomplete'
-    "Plugin 'pydiction'
-    "Plugin 'davidhalter/jedi-vim'
-    "Plugin 'plasticboy/vim-markdown'
-    "Plugin 'KabbAmine/zeavim.vim'
+    Plugin 'davidhalter/jedi-vim'
 
     call vundle#end()
     filetype plugin indent on "required
@@ -603,22 +588,6 @@ highlight Pmenu    guibg=darkgrey  guifg=black
 highlight PmenuSel guibg=lightgrey guifg=black
 "}}}
 
-" plugin - DoxygenToolkit.vim{{{
-"          comments,and generate standard function comments quickly
-"let g:DoxygenToolkit_authorName="rikei(rikei.orz@gmail.com)"
-let g:DoxygenToolkit_licenseTag="My own license\<enter>"
-let g:DoxygenToolkit_undocTag="DOXIGEN_SKIP_BLOCK"
-let g:DoxygenToolkit_briefTag_pre = "@brief\t"
-let g:DoxygenToolkit_paramTag_pre = "@param\t"
-let g:DoxygenToolkit_returnTag = "@return\t"
-let g:DoxygenToolkit_briefTag_funcName = "no"
-let g:DoxygenToolkit_maxFunctionProtoLines = 30
-
-map <leader>da :DoxAuthor<CR>
-map <leader>df :Dox<CR>
-map <leader>db :DoxBlock<CR>
-"}}}
-
 "plugin - syntastic{{{
 let g:syntastic_error_symbol='>>'
 let g:syntastic_warning_symbol='>'
@@ -650,31 +619,6 @@ if "" != $VIM_PATH_C
         let g:syntastic_c_compiler_options .= " -I".path
     endfor
 endif
-"}}}
-
-"plugin - SingleCompile{{{
-map <silent> <F5> <ESC>:SCCompileRun<CR>
-map <silent> <leader>r <ESC>:SCCompileRun<CR>
-"}}}
-
-"plugin - echofunc.vim{{{
-let g:EchoFuncAutoStartBalloonDeclaration=1
-let g:EchoFuncKeyPrev='<c-b>'
-let g:EchoFuncKeyNext='<c-f>'
-let g:EchoFuncLangsUsed = ["c","cpp","python"]
-"}}}
-
-"plugin - supertab.vim{{{
-let g:SuperTabDefaultCompletionType = "context"
-"}}}
-
-"plugin - pydiction{{{
-let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
-"}}}
-
-"plugin - airline{{{
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
 "}}}
 
 " plugin - dummy{{{
