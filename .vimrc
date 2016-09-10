@@ -291,26 +291,6 @@ vnoremap > >gv
 "}}}
 
 " => Moving around, tabs, windows and buffers{{{
-" Treat long lines as break lines (useful when moving around in them)
-"map j gj
-"map k gk
-
-" Useful mappings for managing tabs
-"map <leader>tn :tabnew<cr>
-"map <leader>to :tabonly<cr>
-"map <leader>tc :tabclose<cr>
-"map <leader>tm :tabmove
-
-" Opens a new tab with the current buffer's path
-" Super useful when editing files in the same directory
-"map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
-
-" Switch CWD to the directory of the open buffer
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
-
-" fullpath
-"map <leader>f :echo expand("%:p")<cr>
-
 " Specify the behavior when switching between buffers
 try
   set switchbuf=useopen,usetab,newtab
@@ -343,27 +323,11 @@ set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:
 "}}}
 
 " => Misc{{{
-" Quickly open a buffer for scripbble
-"map <leader>q :e ~/buffer<cr>
-
-" Toggle paste mode on and off
-nnoremap <silent> <leader>pp :setlocal paste!<cr>
-
 " remvoe all the trailling whitespaces
 nnoremap <silent> <leader>W :%s/\s\+$//e<cr>:let @/=''<cr>
 
-" replace tab with space
-"nnoremap <leader>T :%s/\t/    /ge<cr>:let @/=''<cr>
-
 "auto full screen
 au GUIEnter * simalt ~x
-
-"au VimResized * exe "normal! \<c-w>="
-
-"map q: :q
-
-" make tags for current directory
-map <f3> <esc>:!ctags --langmap=c:+.h --languages=c,c++ --c-kinds=+px --c++-kinds=+px --fields=+iafksS --extra=+qf *.[ch]<cr>
 "}}}
 
 " => Persional setting{{{
@@ -372,18 +336,13 @@ iabbrev itn int
 iabbrev cahr char
 iabbrev form from
 iabbrev mian main
-"iabbrev time <c-r>=strftime("%Y/%m/%d %X")<CR>
-"iabbrev date <c-r>=strftime("%Y/%m/%d")<CR>
 "}}}
 
 " => Language special{{{
 augroup ft_c
     au FileType c,cpp
                 \ setlocal iskeyword-=- |
-                \ match Error /\s\+$/ |
-                \ call SetCEnv()
-    au BufNewFile *.{c,cpp,h}
-                \ call SetTitle()
+                \ match Error /\s\+$/
 augroup END
 
 augroup ft_make
@@ -398,8 +357,6 @@ augroup ft_sh
                 \ setlocal isfname+={,} |
                 \ setlocal isk-=$ |
                 \ match Error /\s\+$/
-    au BufNewFile *.sh
-                \ call SetTitle()
 augroup end
 
 augroup ft_perl
@@ -417,131 +374,21 @@ augroup ft_python
                 \ setlocal ai |
                 \ setlocal ff=unix |
                 \ inoremap # X#|
-                \ match Error /\s\+$/ |
-                \ call SetPyEnv()
-    au BufNewFile *.py
-                \ call SetTitle()
+                \ match Error /\s\+$/
 augroup END
 
 augroup ft_sql
     au FileType sql
                 \ match Error /\s\+$/
-    au BufNewFile *.sql
-                \ call SetTitle()
 augroup END
 
 "}}}
 
 " => Custom-defined function and commands{{{
-" comment leader
-let b:comment_leader = ''
-au FileType haskell,vhdl,ada,sql
-            \ let b:comment_leader = '-- '
-au FileType vim
-            \ let b:comment_leader = '" '
-au FileType c,cpp,java
-           \ let b:comment_leader = '// '
-au FileType sh,make,perl,python
-            \ let b:comment_leader = '# '
-au FileType tex
-            \ let b:comment_leader = '% '
-
-" set titile
-func! SetTitle ()
-    if b:comment_leader == ''
-        echomsg "unknown filetype"
-        return
-    endif
-    let s:title=""
-
-    " shabang
-    if "sh" == &ft
-        let s:title .= "#!/bin/env bash\r"
-    elseif "python" ==&ft
-        let s:title  = "#!/bin/env python\r"
-        let s:title .= "# -*- coding: utf-8 -*-\r"
-    endif
-
-    " body
-    let s:title .= b:comment_leader."==========================================================\r"
-    let s:title .= b:comment_leader." File          : ".expand("%:t")."\r"
-    let s:title .= b:comment_leader." Author        :\r"
-    let s:title .= b:comment_leader." Description   : xxxxxx\r"
-    let s:title .= b:comment_leader." Last Modified : ".strftime("%Y %b %d %X") ."\r"
-    let s:title .= b:comment_leader."==========================================================\r"
-
-    call append(0, s:title)
-    exe "1s//\r/g"
-endfunc
-
-" set tags and cscope
-func! SetCEnv()
-    if has("path_extra")
-        if "" != $VIM_PATH_C
-            for path in split($VIM_PATH_C, ',\| ')
-                exec "set path+=".path
-            endfor
-        endif
-    endif
-
-    if has("emacs_tags")
-        if "" != $VIM_TAGS_C
-            for tag in split($VIM_TAGS_C, ',\| ')
-                exec "set tags+=".tag
-            endfor
-        endif
-    endif
-
-    "cscope -b
-    if has("cscope")
-        "set csprg=/usr/cscope
-        set csto=1
-        set cst
-        "set cscopequickfix=s-,c-,d-,i-,t-,e-
-        set nocsverb
-
-        if "" != $VIM_CSCOPE_C
-            for cscope in split($VIM_CSCOPE_C, ',\| ')
-                exec "cs add ".cscope
-            endfor
-        endif
-
-        set csverb
-    endif
-endfunc
-
-" set tags and cscope
-func! SetPyEnv()
-    if has("emacs_tags")
-        if "" != $VIM_TAGS_PY
-            for tag in split($VIM_TAGS_PY, ',\| ')
-                exec "set tags+=".tag
-            endfor
-        endif
-    endif
-
-    if has("cscope")
-        "set csprg=/usr/cscope
-        set csto=1
-        set cst
-        "set cscopequickfix=s-,c-,d-,i-,t-,e-
-        set nocsverb
-
-        if "" != $VIM_CSCOPE_PY
-            for cscope in split($VIM_CSCOPE_PY, ',\| ')
-                exec "cs add ".cscope
-            endfor
-        endif
-
-        set csverb
-    endif
-endfunc
 "}}}
 
 " => Plugin setting{{{
 "plugin - taglist.vim{{{
-""view function list, ctags  programme is needed
-"F4 show hidden taglist window
 let Tlist_Ctags_Cmd = 'ctags'
 
 let Tlist_Show_One_File = 1            "not show the tag of more than one files,just show the current one
@@ -599,19 +446,6 @@ let g:syntastic_python_checkers=['pyflakes']
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_loc_list_height = 5
-
-function! ToggleErrors()
-    let old_last_winnr = winnr('$')
-    lclose
-    if old_last_winnr == winnr('$')
-        " Nothing was closed, open syntastic error location panel
-        Errors
-    endif
-endfunction
-
-nnoremap <Leader>s :call ToggleErrors()<cr>
-"nnoremap <Leader>sn :lnext<cr>
-"nnoremap <Leader>sp :lprevious<cr>
 
 let g:syntastic_c_compiler_options = $VIM_GCC_OPT_C
 if "" != $VIM_PATH_C
