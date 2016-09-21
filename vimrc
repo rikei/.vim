@@ -36,6 +36,7 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
     Plugin 'taglist.vim'
     Plugin 'omnicppcomplete'
     Plugin 'davidhalter/jedi-vim'
+    Plugin 'dhruvasagar/vim-table-mode'
 
     call vundle#end()
     filetype plugin indent on "required
