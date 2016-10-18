@@ -174,7 +174,7 @@ set showcmd
 "highlight current line
 "au WinLeave * set nocursorline nocursorcolumn
 "au WinEnter * set cursorline cursorcolumn
-set cursorline
+"set cursorline
 
 "fold setting
 if has("folding")
@@ -209,18 +209,13 @@ if has("gui_running")
 
     set t_Co=256
     try
-        "colorscheme solarized
         colorscheme molokai
     catch
         colorscheme desert
     endtry
 else
     set t_Co=256
-    try
-        colorscheme molokai
-    catch
-        colorscheme desert
-    endtry
+    colorscheme desert
 endif
 "}}}
 
