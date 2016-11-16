@@ -36,7 +36,7 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
     Plugin 'taglist.vim'
     Plugin 'omnicppcomplete'
     Plugin 'davidhalter/jedi-vim'
-    Plugin 'dhruvasagar/vim-table-mode'
+    "Plugin 'dhruvasagar/vim-table-mode'
     Plugin 'DoxygenToolkit.vim'
 
     call vundle#end()
@@ -216,7 +216,11 @@ if has("gui_running")
     endtry
 else
     set t_Co=256
-    colorscheme desert
+    try
+        colorscheme molokai
+    catch
+        colorscheme desert
+    endtry
 endif
 "}}}
 
