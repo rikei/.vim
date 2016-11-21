@@ -38,6 +38,8 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
     Plugin 'davidhalter/jedi-vim'
     "Plugin 'dhruvasagar/vim-table-mode'
     Plugin 'DoxygenToolkit.vim'
+    Plugin 'SingleCompile'
+    Plugin 'skywind3000/asyncrun.vim'
 
     call vundle#end()
     filetype plugin indent on "required
@@ -454,6 +456,11 @@ if "" != $MISC_PATH_C
         let g:syntastic_c_compiler_options .= " -I".path
     endfor
 endif
+"}}}
+
+"plugin - SingleCompile{{{
+nmap <F9> :SCCompile<cr>
+nmap <F10> :SCCompileRun<cr>
 "}}}
 
 " plugin - dummy{{{
