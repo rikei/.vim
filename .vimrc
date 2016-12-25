@@ -450,9 +450,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_loc_list_height = 5
 
-let g:syntastic_c_compiler_options = $MISC_GCC_OPT_C
-if "" != $MISC_PATH_C
-    for path in split($MISC_PATH_C, ',\| ')
+let g:syntastic_c_compiler_options = $VIM_MISC_GCC_OPT_C
+if "" != $VIM_MISC_PATH_C
+    for path in split($VIM_MISC_PATH_C, ',\| ')
         let g:syntastic_c_compiler_options .= " -I".path
     endfor
 endif
