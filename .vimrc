@@ -464,7 +464,7 @@ nmap <F10> :SCCompileRun<cr>
 "}}}
 
 " plugin - dummy{{{
-autocmd BufCreate * if "" == expand("%") | cd ~ | endif
+"autocmd BufCreate * if "" == expand("%") | cd ~ | endif
 "}}}
 " vim: set fdm=marker:
 "}}}
