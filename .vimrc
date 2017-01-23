@@ -89,7 +89,7 @@ language time C
 let &termencoding=&encoding
 
 "set fileencodings list
-se fencs=ucs-bom,utf-8,cp936,cp932,latin1
+se fencs=ucs-bom,cp936,utf-8,cp932,latin1
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
