@@ -93,8 +93,7 @@ se fencs=ucs-bom,utf-8,cp936,cp932,latin1
 
 "set fenc to encoding if fenc is not specific
 "for empty file
-au BufReadPost * if search('\S', 'w') == 0 |
-            \ let &fenc=&encoding | endif
+au  BufNewFile * let &fenc=&encoding
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -278,7 +277,6 @@ set tabstop=4
 "set tw=500
 
 set ai "Auto indent
-set si "Smart indent
 set nowrap "Wrap lines
 
 "show space betterly when use command 'se list'
@@ -378,7 +376,6 @@ augroup ft_python
                 \ setlocal et |
                 \ setlocal ai |
                 \ setlocal ff=unix |
-                \ inoremap # X#|
                 \ match Error /\s\+$/
 augroup END
 
