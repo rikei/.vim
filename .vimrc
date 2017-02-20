@@ -90,7 +90,7 @@ let &termencoding=&encoding
 
 "set fileencodings list
 "se fencs=ucs-bom,utf-8,cp936,cp932,latin1
-se fencs=ucs-bom,p936,utf-8,ccp932,latin1
+se fencs=ucs-bom,cp936,utf-8,ccp932,latin1
 
 "set fenc to encoding if fenc is not specific
 "for empty file
