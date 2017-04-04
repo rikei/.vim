@@ -30,16 +30,16 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
 
     "general
     Plugin 'rikei/vim-colorschemes'
-    Plugin 'jdevera/vim-cs-explorer'
+    "Plugin 'jdevera/vim-cs-explorer'
     Plugin 'rikei/misc.vim'
     Plugin 'rikei/syntastic'
-    Plugin 'taglist.vim'
+    "Plugin 'taglist.vim'
     Plugin 'omnicppcomplete'
-    Plugin 'davidhalter/jedi-vim'
+    "Plugin 'davidhalter/jedi-vim'
     "Plugin 'dhruvasagar/vim-table-mode'
-    Plugin 'DoxygenToolkit.vim'
+    "Plugin 'DoxygenToolkit.vim'
     Plugin 'SingleCompile'
-    Plugin 'skywind3000/asyncrun.vim'
+    "Plugin 'skywind3000/asyncrun.vim'
 
     call vundle#end()
     filetype plugin indent on "required
@@ -346,6 +346,7 @@ iabbrev mian main
 augroup ft_c
     au FileType c,cpp
                 \ setlocal iskeyword-=- |
+                \ setlocal fdm=syntax |
                 \ match Error /\s\+$/
 augroup END
 
@@ -377,6 +378,7 @@ augroup ft_python
                 \ setlocal et |
                 \ setlocal ai |
                 \ setlocal ff=unix |
+                \ setlocal fdm=indent |
                 \ match Error /\s\+$/
 augroup END
 
