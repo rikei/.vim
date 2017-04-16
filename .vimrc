@@ -30,16 +30,14 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
 
     "general
     Plugin 'rikei/vim-colorschemes'
-    "Plugin 'jdevera/vim-cs-explorer'
+    Plugin 'jdevera/vim-cs-explorer'
     Plugin 'rikei/misc.vim'
     Plugin 'rikei/syntastic'
-    "Plugin 'taglist.vim'
+    Plugin 'taglist.vim'
     Plugin 'omnicppcomplete'
-    "Plugin 'davidhalter/jedi-vim'
-    "Plugin 'dhruvasagar/vim-table-mode'
-    "Plugin 'DoxygenToolkit.vim'
+    Plugin 'davidhalter/jedi-vim'
     Plugin 'SingleCompile'
-    "Plugin 'skywind3000/asyncrun.vim'
+    Plugin 'skywind3000/asyncrun.vim'
 
     call vundle#end()
     filetype plugin indent on "required
@@ -89,8 +87,7 @@ language time C
 let &termencoding=&encoding
 
 "set fileencodings list
-"se fencs=ucs-bom,utf-8,cp936,cp932,latin1
-se fencs=ucs-bom,cp936,utf-8,ccp932,latin1
+se fencs=ucs-bom,utf-8,cp936,cp932,latin1
 
 "set fenc to encoding if fenc is not specific
 "for empty file
