@@ -369,8 +369,6 @@ augroup END
 
 augroup ft_python
     au FileType python
-                \ setlocal ts=4 |
-                \ setlocal fdm=indent |
                 \ match Error /\s\+$/
 augroup END
 
