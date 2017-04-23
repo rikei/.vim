@@ -343,7 +343,6 @@ iabbrev mian main
 augroup ft_c
     au FileType c,cpp
                 \ setlocal iskeyword-=- |
-                \ setlocal fdm=syntax |
                 \ match Error /\s\+$/
 augroup END
 
