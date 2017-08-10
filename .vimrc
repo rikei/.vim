@@ -211,14 +211,14 @@ if has("gui_running")
 
     set t_Co=256
     try
-        colorscheme molokai
+        colorscheme desert
     catch
         colorscheme desert
     endtry
 else
     set t_Co=256
     try
-        colorscheme molokai
+        colorscheme desert
     catch
         colorscheme desert
     endtry
