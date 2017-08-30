@@ -38,6 +38,7 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
     Plugin 'davidhalter/jedi-vim'
     Plugin 'SingleCompile'
     Plugin 'skywind3000/asyncrun.vim'
+    Plugin 'DoxygenToolkit.vim'
 
     call vundle#end()
     filetype plugin indent on "required
