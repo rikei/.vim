@@ -235,7 +235,7 @@ if has("writebackup")
     augroup file_backup
         au Filetype c,cpp,make,sh,vim
                     \ setlocal backup |
-                    \ setlocal backupdir=$HOME/.vimws/.backup |
+                    \ setlocal backupdir=$HOME/.vimws/backup |
                     \ let &bex = '_' . strftime("%Y%m%d_%H%M")
     augroup END
 endif
