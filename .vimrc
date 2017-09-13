@@ -227,14 +227,18 @@ endif
 "}}}
 
 " => Files, backups and undo{{{
-"if has("writebackup")
-"    set backup
-"    set backupdir=$HOME/.vimws/.backup
-"    if "" == finddir('.backup', $HOME.'/.vimws')
-"        call mkdir($HOME.'/.vimws/.backup','p')
-"    endif
-"    au BufWritePre * let &bex = '_' . strftime("%Y-%m-%d_%H:%M:%S"). '~'
-"endif
+if has("writebackup")
+    if "" == finddir('.backup', $HOME.'/.vimws')
+        call mkdir($HOME.'/.vimws/.backup','p')
+    endif
+
+    augroup file_backup
+        au Filetype c,cpp,make,sh,vim
+                    \ setlocal backup |
+                    \ setlocal backupdir=$HOME/.vimws/.backup |
+                    \ let &bex = '_' . strftime("%Y%m%d_%H%M")
+    augroup END
+endif
 
 if has("mksession")
     set ssop-=curdir
