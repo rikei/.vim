@@ -245,14 +245,14 @@ if has("mksession")
     set ssop+=sesdir
 endif
 
-set dir=$HOME/.vimws/.swap
+set dir=$HOME/.vimws/swap
 if "" == finddir('swap', $HOME.'/.vimws')
     call mkdir($HOME.'/.vimws/swap','p')
 endif
 
 if has('persistent_undo')      "check if your vim version supports it
     set undofile                 "turn on the feature
-    set undodir=$HOME/.vimws/.undo  "directory where the undo files will be stored
+    set undodir=$HOME/.vimws/undo  "directory where the undo files will be stored
     if "" == finddir('undo', $HOME.'/.vimws')
         call mkdir($HOME.'/.vimws/undo','p')
     endif
