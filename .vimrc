@@ -333,7 +333,7 @@ set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:
 nnoremap <silent> <leader>W :%s/\s\+$//e<cr>:let @/=''<cr>
 
 "auto full screen
-au GUIEnter * simalt ~x
+"au GUIEnter * simalt ~x
 "}}}
 
 " => Persional setting{{{
