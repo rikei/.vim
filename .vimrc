@@ -30,14 +30,11 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
 
     "general
     Plugin 'rikei/vim-colorschemes'
-    Plugin 'jdevera/vim-cs-explorer'
     Plugin 'rikei/misc.vim'
     Plugin 'rikei/syntastic'
+    Plugin 'jdevera/vim-cs-explorer'
     Plugin 'taglist.vim'
     Plugin 'omnicppcomplete'
-    Plugin 'davidhalter/jedi-vim'
-    Plugin 'SingleCompile'
-    Plugin 'skywind3000/asyncrun.vim'
     Plugin 'DoxygenToolkit.vim'
 
     call vundle#end()
