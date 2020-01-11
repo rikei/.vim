@@ -30,12 +30,13 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
 
     "general
     Plugin 'rikei/vim-colorschemes'
-    Plugin 'rikei/misc.vim'
-    Plugin 'rikei/syntastic'
-    Plugin 'jdevera/vim-cs-explorer'
-    Plugin 'taglist.vim'
-    Plugin 'omnicppcomplete'
-    Plugin 'DoxygenToolkit.vim'
+    Plugin 'rikei/ccslog.vim'
+    "Plugin 'rikei/misc.vim'
+    "Plugin 'rikei/syntastic'
+    "Plugin 'jdevera/vim-cs-explorer'
+    "Plugin 'taglist.vim'
+    "Plugin 'omnicppcomplete'
+    "Plugin 'DoxygenToolkit.vim'
 
     call vundle#end()
     filetype plugin indent on "required
