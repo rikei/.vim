@@ -37,6 +37,7 @@ if "" != finddir('Vundle.vim', $HOME.'/.vim/bundle')
     "Plugin 'taglist.vim'
     "Plugin 'omnicppcomplete'
     "Plugin 'DoxygenToolkit.vim'
+    Plugin 'preservim/nerdtree'
 
     call vundle#end()
     filetype plugin indent on "required
@@ -86,7 +87,7 @@ language time C
 let &termencoding=&encoding
 
 "set fileencodings list
-se fencs=ucs-bom,cp936,utf-8,cp932,latin1
+se fencs=ucs-bom,utf-8,cp936,cp932,latin1
 
 "set fenc to encoding if fenc is not specific
 "for empty file
@@ -323,7 +324,7 @@ endif
 set laststatus=2
 
 " Format the status line
-set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\ |
+set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&fileencoding}\ %c(%v):%l/%L%)\ |
 "}}}
 
 " => Misc{{{
@@ -459,6 +460,10 @@ nmap <F10> :SCCompileRun<cr>
 
 " plugin - dummy{{{
 "autocmd BufCreate * if "" == expand("%") | cd ~ | endif
+"}}}
+
+" plugin - NERDTree{{{
+map <F2> :NERDTreeToggle<CR>
 "}}}
 " vim: set fdm=marker:
 "}}}
